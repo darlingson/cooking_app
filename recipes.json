@@ -1,0 +1,223 @@
+[
+    {
+      "title": "Spaghetti Carbonara",
+      "description": "A classic Italian pasta dish with creamy sauce, bacon, and Parmesan cheese.",
+      "ingredients": ["spaghetti", "bacon", "eggs", "Parmesan cheese", "black pepper"],
+      "instructions": ["Cook spaghetti according to package instructions.", "Fry bacon until crispy.", "Combine eggs and Parmesan cheese in a bowl.", "Toss cooked spaghetti with bacon and egg mixture.", "Season with black pepper and serve immediately."],
+      "difficultyLevel": "Moderate",
+      "preparationTime": "10 minutes",
+      "cookingTime": "15 minutes",
+      "totalTime": "25 minutes",
+      "servings": 4,
+      "cuisine": "Italian",
+      "dietaryRestrictions": [],
+      "nutritionalInformation": {
+        "calories": 450,
+        "fat": 20,
+        "protein": 15,
+        "carbohydrates": 50
+      },
+      "allergens": ["eggs", "dairy"]
+    },
+    {
+      "title": "Chicken Tikka Masala",
+      "description": "A popular Indian curry dish with tender chicken pieces in a creamy tomato-based sauce.",
+      "ingredients": ["chicken breasts", "yogurt", "tomato sauce", "onion", "garlic", "ginger", "spices"],
+      "instructions": ["Marinate chicken in yogurt and spices for 1 hour.", "Grill or bake chicken until cooked through.", "Sauté onion, garlic, and ginger in a pan.", "Add tomato sauce and cooked chicken to the pan.", "Simmer until the sauce thickens.", "Serve hot with rice or naan."],
+      "difficultyLevel": "Moderate",
+      "preparationTime": "1 hour",
+      "cookingTime": "30 minutes",
+      "totalTime": "1 hour 30 minutes",
+      "servings": 4,
+      "cuisine": "Indian",
+      "dietaryRestrictions": ["Dairy-Free"],
+      "nutritionalInformation": {
+        "calories": 400,
+        "fat": 15,
+        "protein": 25,
+        "carbohydrates": 35
+      },
+      "allergens": []
+    },
+    {
+      "title": "Caprese Salad",
+      "description": "A refreshing Italian salad made with fresh tomatoes, mozzarella cheese, and basil leaves.",
+      "ingredients": ["tomatoes", "fresh mozzarella cheese", "fresh basil leaves", "balsamic vinegar", "extra virgin olive oil", "salt", "black pepper"],
+      "instructions": ["Slice tomatoes and mozzarella cheese into thick slices.", "Arrange tomato, mozzarella, and basil leaves on a plate.", "Drizzle with balsamic vinegar and olive oil.", "Season with salt and black pepper to taste.", "Serve immediately."],
+      "difficultyLevel": "Easy",
+      "preparationTime": "10 minutes",
+      "cookingTime": "0 minutes",
+      "totalTime": "10 minutes",
+      "servings": 2,
+      "cuisine": "Italian",
+      "dietaryRestrictions": ["Vegetarian"],
+      "nutritionalInformation": {
+        "calories": 200,
+        "fat": 15,
+        "protein": 10,
+        "carbohydrates": 10
+      },
+      "allergens": []
+    },
+    {
+      "title": "Vegetable Stir-Fry",
+      "description": "A quick and healthy stir-fry recipe with a variety of colorful vegetables.",
+      "ingredients": ["bell peppers", "broccoli", "carrots", "snow peas", "onion", "garlic", "ginger", "soy sauce", "sesame oil", "rice vinegar"],
+      "instructions": ["Chop vegetables into bite-sized pieces.", "Sauté onion, garlic, and ginger in a pan.", "Add vegetables to the pan and stir-fry until tender-crisp.", "Stir in soy sauce, sesame oil, and rice vinegar.", "Serve hot over rice or noodles."],
+      "difficultyLevel": "Easy",
+      "preparationTime": "15 minutes",
+      "cookingTime": "10 minutes",
+      "totalTime": "25 minutes",
+      "servings": 4,
+      "cuisine": "Asian",
+      "dietaryRestrictions": ["Vegan"],
+      "nutritionalInformation": {
+        "calories": 150,
+        "fat": 5,
+        "protein": 5,
+        "carbohydrates": 20
+      },
+      "allergens": []
+    },
+    {
+      "title": "Grilled Cheese Sandwich",
+      "description": "A classic comfort food sandwich made with melted cheese between toasted bread slices.",
+      "ingredients": ["bread", "cheddar cheese", "butter"],
+      "instructions": ["Butter one side of each bread slice.", "Place cheese between two bread slices, buttered side facing out.", "Grill sandwich in a pan until golden brown and cheese is melted.", "Serve hot and crispy."],
+      "difficultyLevel": "Easy",
+      "preparationTime": "5 minutes",
+      "cookingTime": "5 minutes",
+      "totalTime": "10 minutes",
+      "servings": 1,
+      "cuisine": "American",
+      "dietaryRestrictions": [],
+      "nutritionalInformation": {
+        "calories": 350,
+        "fat": 20,
+        "protein": 10,
+        "carbohydrates": 30
+      },
+      "allergens": ["dairy"]
+    },
+    {
+      "title": "Chocolate Chip Cookies",
+      "description": "Classic homemade cookies loaded with chocolate chips.",
+      "ingredients": ["butter", "sugar", "brown sugar", "eggs", "vanilla extract", "flour", "baking soda", "salt", "chocolate chips"],
+      "instructions": ["Cream together butter, sugar, and brown sugar.", "Beat in eggs and vanilla extract.", "Mix in flour, baking soda, and salt.", "Fold in chocolate chips.", "Drop spoonfuls of dough onto a baking sheet.", "Bake at 350°F (175°C) for 10-12 minutes until golden brown."],
+      "difficultyLevel": "Easy",
+      "preparationTime": "15 minutes",
+      "cookingTime": "10 minutes",
+      "totalTime": "25 minutes",
+      "servings": 24,
+      "cuisine": "American",
+      "dietaryRestrictions": [],
+      "nutritionalInformation": {
+        "calories": 150,
+        "fat": 8,
+        "protein": 2,
+        "carbohydrates": 18
+      },
+      "allergens": ["eggs", "dairy", "gluten"]
+    },
+    {
+      "title": "Margarita Pizza",
+      "description": "A classic Italian pizza topped with tomato sauce, fresh mozzarella, and basil leaves.",
+      "ingredients": ["pizza dough", "tomato sauce", "fresh mozzarella cheese", "fresh basil leaves", "olive oil", "salt", "black pepper"],
+      "instructions": ["Roll out pizza dough into a circle.", "Spread tomato sauce over the dough.", "Top with slices of fresh mozzarella cheese and basil leaves.", "Drizzle with olive oil and season with salt and black pepper.", "Bake in a preheated oven at 450°F (230°C) for 10-12 minutes until crust is golden brown."],
+      "difficultyLevel": "Easy",
+      "preparationTime": "15 minutes",
+      "cookingTime": "12 minutes",
+      "totalTime": "27 minutes",
+      "servings": 1,
+      "cuisine": "Italian",
+      "dietaryRestrictions": ["Vegetarian"],
+      "nutritionalInformation": {
+        "calories": 300,
+        "fat": 12,
+        "protein": 10,
+        "carbohydrates": 40
+      },
+      "allergens": ["dairy", "gluten"]
+    },
+    {
+      "title": "Guacamole",
+      "description": "A fresh and flavorful Mexican dip made with ripe avocados, tomatoes, onions, and lime juice.",
+      "ingredients": ["ripe avocados", "tomatoes", "onion", "cilantro", "lime juice", "salt", "jalapeno (optional)"],
+      "instructions": ["Cut avocados in half, remove pits, and scoop out flesh into a bowl.", "Mash avocados with a fork until smooth or chunky, as desired.", "Stir in chopped tomatoes, onion, cilantro, lime juice, and salt.", "Add diced jalapeno for extra heat, if desired.", "Serve immediately with tortilla chips or as a topping for tacos."],
+      "difficultyLevel": "Easy",
+      "preparationTime": "10 minutes",
+      "cookingTime": "0 minutes",
+      "totalTime": "10 minutes",
+      "servings": 4,
+      "cuisine": "Mexican",
+      "dietaryRestrictions": ["Vegan"],
+      "nutritionalInformation": {
+        "calories": 100,
+        "fat": 8,
+        "protein": 2,
+        "carbohydrates": 10
+      },
+      "allergens": []
+    },
+    {
+      "title": "Sushi Rolls",
+      "description": "Homemade sushi rolls filled with fresh fish, vegetables, and rice, wrapped in seaweed.",
+      "ingredients": ["sushi rice", "nori (seaweed)", "sushi-grade fish (e.g., salmon, tuna)", "avocado", "cucumber", "rice vinegar", "sugar", "soy sauce", "wasabi", "pickled ginger"],
+      "instructions": ["Cook sushi rice according to package instructions.", "Prepare rice vinegar mixture by mixing rice vinegar and sugar.", "Lay a sheet of nori on a bamboo sushi mat.", "Spread a thin layer of rice over the nori, leaving a border at the top.", "Arrange fish, avocado, and cucumber in the center of the rice.", "Roll the sushi tightly using the bamboo mat.", "Slice the roll into bite-sized pieces.", "Serve with soy sauce, wasabi, and pickled ginger."],
+      "difficultyLevel": "Moderate",
+      "preparationTime": "30 minutes",
+      "cookingTime": "0 minutes",
+      "totalTime": "30 minutes",
+      "servings": 4,
+      "cuisine": "Japanese",
+      "dietaryRestrictions": [],
+      "nutritionalInformation": {
+        "calories": 250,
+        "fat": 5,
+        "protein": 15,
+        "carbohydrates": 30
+      },
+      "allergens": []
+    },
+    {
+      "title": "Vegetarian Chili",
+      "description": "A hearty and flavorful chili made with beans, vegetables, and spices.",
+      "ingredients": ["kidney beans", "black beans", "bell peppers", "onion", "tomatoes", "corn", "chili powder", "cumin", "paprika", "salt", "black pepper"],
+      "instructions": ["Sauté onion and bell peppers in a large pot until softened.", "Add tomatoes, beans, corn, and spices to the pot.", "Simmer for 30-40 minutes, stirring occasionally.", "Adjust seasoning to taste.", "Serve hot with toppings such as shredded cheese, sour cream, and cilantro."],
+      "difficultyLevel": "Easy",
+      "preparationTime": "15 minutes",
+      "cookingTime": "40 minutes",
+      "totalTime": "55 minutes",
+      "servings": 6,
+      "cuisine": "American",
+      "dietaryRestrictions": ["Vegetarian", "Vegan"],
+      "nutritionalInformation": {
+        "calories": 200,
+        "fat": 2,
+        "protein": 10,
+        "carbohydrates": 40
+      },
+      "allergens": []
+    },
+    {
+      "title": "Pasta Primavera",
+      "description": "A light and colorful pasta dish featuring seasonal vegetables in a creamy sauce.",
+      "ingredients": ["pasta", "asparagus", "bell peppers", "zucchini", "cherry tomatoes", "garlic", "cream", "Parmesan cheese", "olive oil", "salt", "black pepper"],
+      "instructions": ["Cook pasta according to package instructions.", "Sauté garlic and vegetables in olive oil until tender-crisp.", "Stir in cream and Parmesan cheese.", "Add cooked pasta to the pan and toss to combine.", "Season with salt and black pepper to taste.", "Serve hot with additional Parmesan cheese on top."],
+      "difficultyLevel": "Easy",
+      "preparationTime": "15 minutes",
+      "cookingTime": "15 minutes",
+      "totalTime": "30 minutes",
+      "servings": 4,
+      "cuisine": "Italian",
+      "dietaryRestrictions": [],
+      "nutritionalInformation": {
+        "calories": 350,
+        "fat": 15,
+        "protein": 10,
+        "carbohydrates": 45
+      },
+      "allergens": ["dairy"]
+    }
+  ]
+  
