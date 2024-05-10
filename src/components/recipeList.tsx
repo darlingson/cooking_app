@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, FlatList, StyleSheet } from 'react-native';
+import { View,  FlatList, StyleSheet } from 'react-native';
 import Recipe from '../types/recipe';
+import { Card, Text} from 'react-native-paper';
 
 const RecipeList: React.FC = () => {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
@@ -20,8 +21,13 @@ const RecipeList: React.FC = () => {
 
   const renderRecipeItem = ({ item }: { item: Recipe }) => (
     <View style={styles.recipeItem}>
-      <Text style={styles.recipeTitle}>{item.title}</Text>
-      <Text style={styles.recipeDescription}>{item.description}</Text>
+      <Card>
+      <Card.Content>
+      <Text variant="titleLarge" style={styles.recipeTitle}>{item.title}</Text>
+      <Text variant="bodyMedium" style={styles.recipeDescription}>{item.description}</Text>
+      </Card.Content>
+      <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
+      </Card>
     </View>
   );
 
