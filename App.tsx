@@ -2,6 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View, useColorScheme } from "react-native";
 import RecipeList from "./src/components/recipeList";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createStackNavigator } from '@react-navigation/stack';
 import { HomeScreen } from "./src/screens/home_screen";
 import { SettingsScreen } from "./src/screens/settings_screen";
 import { NavigationContainer, useTheme } from "@react-navigation/native";
@@ -9,11 +10,22 @@ import { Text, BottomNavigation } from "react-native-paper";
 import { CommonActions } from "@react-navigation/native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { DefaultTheme, DarkTheme } from "@react-navigation/native";
+import  RecipeDetailsScreen  from "./src/screens/recipe_details";
+import Recipe from "./src/types/recipe";
+
+const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
+export type RootStackParamList = {
+  RecipeDetails: { recipe: Recipe }; // Define the parameter for RecipeDetails
+};
 export default function App() {
   const scheme = useColorScheme();
   return (
     <NavigationContainer theme={scheme === "dark" ? DarkTheme : DefaultTheme}>
-      <MyTabs />
+      <Stack.Navigator>
+        <Stack.Screen name="Tabs" component={MyTabs} options={{ headerShown: false }} />
+        <Stack.Screen name="RecipeDetails" component={RecipeDetailsScreen} initialParams={{ recipe: {} as Recipe }}/>
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
@@ -27,7 +39,6 @@ const styles = StyleSheet.create({
   },
 });
 
-const Tab = createBottomTabNavigator();
 
 function MyTabs() {
   const { colors } = useTheme();

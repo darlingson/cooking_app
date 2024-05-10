@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { View,  FlatList, StyleSheet } from 'react-native';
+import { View,  FlatList, StyleSheet, TouchableOpacity } from 'react-native';
 import Recipe from '../types/recipe';
 import { Card, Text} from 'react-native-paper';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../App';
 
 const RecipeList: React.FC = () => {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
+  const onPressRecipe = (recipe: Recipe) => {
+    navigation.navigate('RecipeDetails', { recipe } as any);
+  };
 
   useEffect(() => {
     const loadRecipes = async () => {
@@ -21,6 +28,7 @@ const RecipeList: React.FC = () => {
 
   const renderRecipeItem = ({ item }: { item: Recipe }) => (
     <View style={styles.recipeItem}>
+      <TouchableOpacity onPress={() => onPressRecipe(item)}>
       <Card>
       <Card.Content>
       <Text variant="titleLarge" style={styles.recipeTitle}>{item.title}</Text>
@@ -28,6 +36,7 @@ const RecipeList: React.FC = () => {
       </Card.Content>
       <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
       </Card>
+      </TouchableOpacity>
     </View>
   );
 
