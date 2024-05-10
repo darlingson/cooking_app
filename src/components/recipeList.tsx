@@ -1,24 +1,20 @@
-// RecipeList.tsx
-
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, StyleSheet } from 'react-native';
-import Recipe from '../types/recipe'; // Import the Recipe interface
+import Recipe from '../types/recipe';
 
 const RecipeList: React.FC = () => {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
 
   useEffect(() => {
-    // Function to load recipes from JSON file
     const loadRecipes = async () => {
       try {
-        const response = await require('../../recipes.json'); // Load JSON file
-        setRecipes(response); // Set recipes state
+        const response = await require('../../recipes.json');
+        setRecipes(response);
       } catch (error) {
         console.error('Error loading recipes:', error);
       }
     };
 
-    // Call the function to load recipes on component mount
     loadRecipes();
   }, []);
 
@@ -31,7 +27,6 @@ const RecipeList: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      <Text>Hi</Text>
       <FlatList
         data={recipes}
         renderItem={renderRecipeItem}
