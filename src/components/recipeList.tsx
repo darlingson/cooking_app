@@ -31,6 +31,7 @@ const RecipeList: React.FC = () => {
 
   return (
     <View style={styles.container}>
+      <Text>Hi</Text>
       <FlatList
         data={recipes}
         renderItem={renderRecipeItem}
