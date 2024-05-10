@@ -63,12 +63,7 @@ function MyTabs() {
           }}
           getLabelText={({ route }) => {
             const { options } = descriptors[route.key];
-            const label =
-              options.tabBarLabel !== undefined
-                ? options.tabBarLabel
-                : options.title !== undefined
-                ? options.title
-                : route.title;
+            const label = options.tabBarLabel?.toString() ?? '';
 
             return label;
           }}
