@@ -12,6 +12,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { DefaultTheme, DarkTheme } from "@react-navigation/native";
 import  {RecipeDetailsScreen}  from "./src/screens/recipe_details";
 import Recipe from "./src/types/recipe";
+import SearchScreen from "./src/screens/search_screen";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator<RootStackParamList>();
@@ -93,6 +94,18 @@ function MyTabs() {
           tabBarIcon: ({ color, size }) => {
             return (
               <MaterialCommunityIcons name="home" size={size} color={color} />
+            );
+          },
+        }}
+      />
+      <Tab.Screen
+        name="Search"
+        component={SearchScreen}
+        options={{
+          tabBarLabel: "Search",
+          tabBarIcon: ({ color, size }) => {
+            return (
+              <MaterialCommunityIcons name="magnify" size={size} color={color} />
             );
           },
         }}
