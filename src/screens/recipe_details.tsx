@@ -1,15 +1,24 @@
-// RecipeDetailsScreen.tsx
-
-import React from 'react';
-import { Text, View } from 'react-native';
-
-const RecipeDetailsScreen: React.FC = () => {
-  return (
-    <View>
-      <Text>Recipe Details</Text>
-      {/* Render recipe details here */}
-    </View>
-  );
+import { View, Text } from "react-native";
+import { RouteProp } from '@react-navigation/native';
+import Recipe from '../types/recipe';
+type RootStackParamList = {
+    RecipeDetails: {
+        recipe: Recipe;
+    };
 };
 
-export default RecipeDetailsScreen;
+type RecipeDetailsScreenRouteProp = RouteProp<RootStackParamList, 'RecipeDetails'>;
+
+interface RecipeDetailsScreenProps {
+    route: RecipeDetailsScreenRouteProp;
+}
+export const RecipeDetailsScreen: React.FC<RecipeDetailsScreenProps> = ({ route }) => {
+    const { recipe } = route.params;
+    return (
+        <View>
+            <Text>Recipe Details Screen</Text>
+            <Text>{recipe.title}</Text>
+            <Text>{recipe.description}</Text>
+        </View>
+    );
+}

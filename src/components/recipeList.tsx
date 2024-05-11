@@ -10,7 +10,7 @@ const RecipeList: React.FC = () => {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
   const onPressRecipe = (recipe: Recipe) => {
-    navigation.navigate('RecipeDetails', { recipe } as any);
+    navigation.navigate('RecipeDetails', { recipe });
   };
 
   useEffect(() => {

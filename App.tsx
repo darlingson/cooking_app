@@ -10,13 +10,14 @@ import { Text, BottomNavigation } from "react-native-paper";
 import { CommonActions } from "@react-navigation/native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { DefaultTheme, DarkTheme } from "@react-navigation/native";
-import  RecipeDetailsScreen  from "./src/screens/recipe_details";
+import  {RecipeDetailsScreen}  from "./src/screens/recipe_details";
 import Recipe from "./src/types/recipe";
 
 const Tab = createBottomTabNavigator();
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<RootStackParamList>();
 export type RootStackParamList = {
-  RecipeDetails: { recipe: Recipe }; // Define the parameter for RecipeDetails
+  RecipeDetails: { recipe: Recipe };
+  Tabs: undefined;
 };
 export default function App() {
   const scheme = useColorScheme();
@@ -24,7 +25,7 @@ export default function App() {
     <NavigationContainer theme={scheme === "dark" ? DarkTheme : DefaultTheme}>
       <Stack.Navigator>
         <Stack.Screen name="Tabs" component={MyTabs} options={{ headerShown: false }} />
-        <Stack.Screen name="RecipeDetails" component={RecipeDetailsScreen} initialParams={{ recipe: {} as Recipe }}/>
+        <Stack.Screen name="RecipeDetails" component={RecipeDetailsScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
