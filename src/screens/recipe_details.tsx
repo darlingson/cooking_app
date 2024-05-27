@@ -36,12 +36,14 @@ export const RecipeDetailsScreen: React.FC<RecipeDetailsScreenProps> = ({
             <Text>Calories: {recipe.nutritionalInformation.calories}</Text>
             <Text>Fat: {recipe.nutritionalInformation.fat}g</Text>
             <Text>Protein: {recipe.nutritionalInformation.protein}g</Text>
-            <Text>Carbohydrates: {recipe.nutritionalInformation.carbohydrates}g</Text>
+            <Text>
+              Carbohydrates: {recipe.nutritionalInformation.carbohydrates}g
+            </Text>
           </View>
           <View style={styles.section}>
             <Text style={styles.sectionHeader}>Ingredients:</Text>
             {recipe.ingredients.map((ingredient, index) => (
-            //   <Text key={index}>{ingredient}</Text>
+              //   <Text key={index}>{ingredient}</Text>
               <IngredientComponent key={index} ingredient={ingredient} />
             ))}
           </View>
@@ -52,7 +54,10 @@ export const RecipeDetailsScreen: React.FC<RecipeDetailsScreenProps> = ({
           <Text style={styles.title}>Cooking Instructions</Text>
           {recipe.instructions.map((instruction, index) => (
             // <Text key={index}>{instruction}</Text>
-            <CookingInstructionComponent key={index} instruction={instruction} />
+            <CookingInstructionComponent
+              key={index}
+              instruction={instruction}
+            />
           ))}
         </View>
       </PagerView>
