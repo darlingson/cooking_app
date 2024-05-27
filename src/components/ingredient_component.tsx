@@ -18,9 +18,8 @@ export default function IngredientComponent(props: { ingredient: string }) {
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={toggleCompleted}>
-        <Card
-        >
-          <Card.Content           style={styles.content}>
+        <Card style={[styles.item, completed && styles.itemSelected]}>
+          <Card.Content style={styles.content}>
             {/* <Text>{props.ingredient}</Text> */}
             <Text style={styles.text}>{props.ingredient}</Text>
             {completed && (
@@ -38,6 +37,19 @@ export default function IngredientComponent(props: { ingredient: string }) {
 const styles = StyleSheet.create({
   container: {
     marginBottom: 10,
+  },
+  itemSelected: {
+    backgroundColor: "green",
+  },
+  item: {
+    marginBottom: 10,
+    padding: 10,
+    borderRadius: 10,
+    backgroundColor: "#f5f5f5",
+    borderColor: "#ddd",
+    borderWidth: 1,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
   },
   content: {
     flexDirection: "row",
