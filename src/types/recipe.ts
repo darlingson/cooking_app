@@ -17,6 +17,7 @@ interface Recipe {
       carbohydrates: number;
     };
     allergens: string[];
+    image: string;
   }
   
   export default Recipe;
