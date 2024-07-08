@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { StyleSheet, View, Text, ScrollView } from "react-native";
 import { RouteProp } from "@react-navigation/native";
 import PagerView from "react-native-pager-view";
@@ -24,9 +25,15 @@ export const RecipeDetailsScreen: React.FC<RecipeDetailsScreenProps> = ({
   route,
 }) => {
   const { recipe } = route.params;
+  const [pageIndex, setPageIndex] = useState(0);
+
   return (
     <View style={styles.container}>
-      <PagerView style={styles.pager} initialPage={0}>
+      <PagerView
+        style={styles.pager}
+        initialPage={0}
+        onPageSelected={(e) => setPageIndex(e.nativeEvent.position)}
+      >
         {/* Page 1: Recipe Details */}
         <ScrollView style={styles.page} key={0}>
           <Text style={styles.title}>{recipe.title}</Text>
@@ -43,7 +50,6 @@ export const RecipeDetailsScreen: React.FC<RecipeDetailsScreenProps> = ({
           <View style={styles.section}>
             <Text style={styles.sectionHeader}>Ingredients:</Text>
             {recipe.ingredients.map((ingredient, index) => (
-              //   <Text key={index}>{ingredient}</Text>
               <IngredientComponent key={index} ingredient={ingredient} />
             ))}
           </View>
@@ -53,14 +59,13 @@ export const RecipeDetailsScreen: React.FC<RecipeDetailsScreenProps> = ({
         <View style={styles.page} key={1}>
           <Text style={styles.title}>Cooking Instructions</Text>
           {recipe.instructions.map((instruction, index) => (
-            // <Text key={index}>{instruction}</Text>
-            <CookingInstructionComponent
-              key={index}
-              instruction={instruction}
-            />
+            <CookingInstructionComponent key={index} instruction={instruction} />
           ))}
         </View>
       </PagerView>
+      <Text style={styles.pageIndicator}>
+        Page: {pageIndex + 1}
+      </Text>
     </View>
   );
 };
@@ -90,5 +95,15 @@ const styles = StyleSheet.create({
   sectionHeader: {
     fontWeight: "bold",
     marginBottom: 10,
+  },
+  pageIndicator: {
+    position: "absolute",
+    bottom: 10,
+    padding: 5,
+    backgroundColor: "rgba(0,0,0,0.5)",
+    color: "white",
+    borderRadius: 5,
+    zIndex: 10,
+    left: "50%",
   },
 });
