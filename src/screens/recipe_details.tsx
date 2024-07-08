@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { StyleSheet, View, Text, ScrollView, Button } from "react-native";
+import { StyleSheet, View, Text, ScrollView, Button, Pressable } from "react-native";
 import { RouteProp } from "@react-navigation/native";
 import PagerView from "react-native-pager-view";
 import Recipe from "../types/recipe";
@@ -42,6 +42,25 @@ export const RecipeDetailsScreen: React.FC<RecipeDetailsScreenProps> = ({
     }
   };
 
+  const renderIndicators = () => {
+    return (
+      <View style={styles.indicatorContainer}>
+        <View
+          style={[
+            styles.indicator,
+            pageIndex === 0 ? styles.activeIndicator : styles.inactiveIndicator,
+          ]}
+        />
+        <View
+          style={[
+            styles.indicator,
+            pageIndex === 1 ? styles.activeIndicator : styles.inactiveIndicator,
+          ]}
+        />
+      </View>
+    );
+  };
+
   return (
     <View style={styles.container}>
       <PagerView
@@ -49,7 +68,6 @@ export const RecipeDetailsScreen: React.FC<RecipeDetailsScreenProps> = ({
         style={styles.pager}
         initialPage={0}
         onPageSelected={(e) => setPageIndex(e.nativeEvent.position)}
-        scrollEnabled={false}
       >
         {/* Page 1: Recipe Details */}
         <ScrollView style={styles.page} key={0}>
@@ -84,9 +102,9 @@ export const RecipeDetailsScreen: React.FC<RecipeDetailsScreenProps> = ({
         </View>
       </PagerView>
       <View style={styles.buttonContainer}>
-        <Button title="<" onPress={handlePrevPage} />
-        <Text style={styles.pageIndicator}>Page: {pageIndex + 1}</Text>
-        <Button title=">" onPress={handleNextPage} />
+        {/* <Button title="<" onPress={handlePrevPage} /> */}
+        {renderIndicators()}
+        {/* <Button title=">" onPress={handleNextPage} /> */}
       </View>
     </View>
   );
@@ -123,12 +141,27 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     padding: 10,
+    position: "absolute",
+    bottom: 20,
+    left: 0,
+    right: 0,
   },
-  pageIndicator: {
+  indicatorContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
     marginHorizontal: 20,
-    backgroundColor: "rgba(0,0,0,0.5)",
-    color: "white",
-    padding: 5,
-    borderRadius: 5,
+  },
+  indicator: {
+    width: 30,
+    height: 5,
+    marginHorizontal: 5,
+    borderRadius: 2.5,
+  },
+  activeIndicator: {
+    backgroundColor: "blue",
+  },
+  inactiveIndicator: {
+    backgroundColor: "gray",
   },
 });
