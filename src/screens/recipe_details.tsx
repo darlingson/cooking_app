@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { StyleSheet, View, Text, ScrollView } from "react-native";
+import React, { useState, useRef } from "react";
+import { StyleSheet, View, Text, ScrollView, Button } from "react-native";
 import { RouteProp } from "@react-navigation/native";
 import PagerView from "react-native-pager-view";
 import Recipe from "../types/recipe";
@@ -26,13 +26,30 @@ export const RecipeDetailsScreen: React.FC<RecipeDetailsScreenProps> = ({
 }) => {
   const { recipe } = route.params;
   const [pageIndex, setPageIndex] = useState(0);
+  const pagerRef = useRef<PagerView>(null);
+
+  const handleNextPage = () => {
+    if (pagerRef.current && pageIndex < 1) {
+      pagerRef.current.setPage(pageIndex + 1);
+      setPageIndex(pageIndex + 1);
+    }
+  };
+
+  const handlePrevPage = () => {
+    if (pagerRef.current && pageIndex > 0) {
+      pagerRef.current.setPage(pageIndex - 1);
+      setPageIndex(pageIndex - 1);
+    }
+  };
 
   return (
     <View style={styles.container}>
       <PagerView
+        ref={pagerRef}
         style={styles.pager}
         initialPage={0}
         onPageSelected={(e) => setPageIndex(e.nativeEvent.position)}
+        scrollEnabled={false}
       >
         {/* Page 1: Recipe Details */}
         <ScrollView style={styles.page} key={0}>
@@ -59,13 +76,18 @@ export const RecipeDetailsScreen: React.FC<RecipeDetailsScreenProps> = ({
         <View style={styles.page} key={1}>
           <Text style={styles.title}>Cooking Instructions</Text>
           {recipe.instructions.map((instruction, index) => (
-            <CookingInstructionComponent key={index} instruction={instruction} />
+            <CookingInstructionComponent
+              key={index}
+              instruction={instruction}
+            />
           ))}
         </View>
       </PagerView>
-      <Text style={styles.pageIndicator}>
-        Page: {pageIndex + 1}
-      </Text>
+      <View style={styles.buttonContainer}>
+        <Button title="<" onPress={handlePrevPage} />
+        <Text style={styles.pageIndicator}>Page: {pageIndex + 1}</Text>
+        <Button title=">" onPress={handleNextPage} />
+      </View>
     </View>
   );
 };
@@ -96,14 +118,17 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginBottom: 10,
   },
+  buttonContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 10,
+  },
   pageIndicator: {
-    position: "absolute",
-    bottom: 10,
-    padding: 5,
+    marginHorizontal: 20,
     backgroundColor: "rgba(0,0,0,0.5)",
     color: "white",
+    padding: 5,
     borderRadius: 5,
-    zIndex: 10,
-    left: "50%",
   },
 });
